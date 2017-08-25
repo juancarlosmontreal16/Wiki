@@ -51,7 +51,15 @@ namespace Wiki.Controllers
             }
 
             //return View(repo.GetArticles());
-            return View(new List<Article>());
+            Article b = new Article();
+            b.Contenu = "asdasdasdad";
+            b.DateModification = DateTime.Now;
+            b.Revision = 0;
+            b.Titre = "Nuevo";
+            b.IdContributeur = 1;
+            List<Article> art = new List<Article>();
+            art.Add(b);
+            return View(art);
         }
      
     }

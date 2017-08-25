@@ -50,7 +50,8 @@ namespace Wiki.Controllers
                     break;
             }
 
-            return View(repo.GetArticles());
+            //return View(repo.GetArticles());
+            return View(new List<Article>());
         }
      
     }

@@ -154,3 +154,42 @@ C:\Users\e1695850\Desktop\Wiki\Wiki\bin\fr\System.Web.WebPages.Razor.resources.d
 C:\Users\e1695850\Desktop\Wiki\Wiki\obj\Debug\Wiki.csprojResolveAssemblyReference.cache
 C:\Users\e1695850\Desktop\Wiki\Wiki\obj\Debug\Wiki.dll
 C:\Users\e1695850\Desktop\Wiki\Wiki\obj\Debug\Wiki.pdb
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Wiki.dll.config
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Wiki.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Wiki.pdb
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Antlr3.Runtime.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\EntityFramework.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\EntityFramework.SqlServer.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Microsoft.Web.Infrastructure.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Newtonsoft.Json.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Helpers.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Mvc.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Optimization.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Razor.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.WebPages.Deployment.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.WebPages.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.WebPages.Razor.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\WebGrease.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Antlr3.Runtime.pdb
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\EntityFramework.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\EntityFramework.SqlServer.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\Newtonsoft.Json.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Helpers.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Mvc.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Optimization.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.Razor.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.WebPages.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.WebPages.Deployment.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\System.Web.WebPages.Razor.xml
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\EntityFramework.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\EntityFramework.SqlServer.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.Helpers.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.Mvc.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.Optimization.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.Razor.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.WebPages.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.WebPages.Deployment.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\bin\fr\System.Web.WebPages.Razor.resources.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\obj\Debug\Wiki.csprojResolveAssemblyReference.cache
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\obj\Debug\Wiki.dll
+E:\Doc\DEC Gestion Informatique CMaisonneuve\session 4 Automne 2017\Prog web II\Lab\ProjetWiki\Wiki\Wiki\obj\Debug\Wiki.pdb

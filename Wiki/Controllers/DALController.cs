@@ -10,6 +10,7 @@ using Wiki.Models.Biz;
 
 namespace Wiki.Controllers
 {
+
     public class DALController : Controller
     {
         Articles repo = new Articles();
@@ -19,15 +20,18 @@ namespace Wiki.Controllers
         {
             switch (operation)
             {
-                case "Find":
+                case "Consulter":
                     if (a.Titre == null)
                     {
-                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                        ViewBag.Erreur = "Erreur : Vous devez saisir un titre !!!";
+                        return View();
                     }
+                    string titre = a.Titre;
                     a = repo.Find(a.Titre);
                     if (a == null)
                     {
-                        return HttpNotFound();
+                        ViewBag.Erreur = "L'article n'existe pas";
+                        ViewBag.Titre = titre;
                     }
                     ViewBag.Article = a;
                     break;
@@ -49,17 +53,7 @@ namespace Wiki.Controllers
                     repo.Delete(a.Titre);
                     break;
             }
-
-            return View(repo.GetArticles());
-            //Article b = new Article();
-            //b.Contenu = "asdasdasdad";
-            //b.DateModification = DateTime.Now;
-            //b.Revision = 0;
-            //b.Titre = "Nuevo";
-            //b.IdContributeur = 1;
-            //List<Article> art = new List<Article>();
-            //art.Add(b);
-            //return View(art);
+            return View();
         }
      
     }

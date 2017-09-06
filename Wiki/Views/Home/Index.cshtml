@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    if (ViewBag.Article != null)
+    {
+        <font color="red"><p>@ViewBag.Erreur</p></font>
+        @Html.Action("Partial_Article", "Home", new { article = ViewBag.Article })
+    }
+    else
+    {
+        if (ViewBag.Erreur == "L'article n'existe pas")
+        {
+            <h1><font color="red"><p>@ViewBag.Erreur</p></font></h1>
+            <div class="form-group">
+                <span class="control-label col-md-5">Voulez vouz l'ajouter ?</span>
+                @Html.ActionLink("OUI", "AjouterArticle", "Home", new { titre = ViewBag.Titre }, null) |
+                @Html.ActionLink("NON", "Index")
+            </div>
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h1>Bienvenue!</h1>
+                <hr />
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <span class="control-label col-md-2">Consulter l'article</span>
+                        @Html.TextBox("Titre")
+                        <font color="red"><p>@ViewBag.Erreur</p></font>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Consulter" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+}

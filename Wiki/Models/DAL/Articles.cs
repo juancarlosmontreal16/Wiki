@@ -14,15 +14,77 @@ namespace Wiki.Models.DAL
     public class Articles
     {
         // Auteurs:
-        public int Add(Article a)
+        public bool Add(Article a)
         {
-            return 0;
+            bool TEST = true;
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                var cmd = new SqlCommand("AddArticle", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Titre", SqlDbType.NVarChar).Value = a.Titre;
+                cmd.Parameters.Add("@Contenu", SqlDbType.NVarChar).Value = a.Contenu;
+                cmd.Parameters.Add("@IdContributeur", SqlDbType.Int).Value = 1;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return TEST;
+                }
+                catch (Exception e)
+                {
+                    string Msg = e.Message;
+                    TEST = false;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return TEST;
+            }
         }
 
         // Auteurs:
         public Article Find(string titre)
         {
-            return null;
+            string cStr = ConfigurationManager.ConnectionStrings["Wiki"].ConnectionString;
+            using (SqlConnection cnx = new SqlConnection(cStr))
+            {
+                string requete = "FindArticle";                   // Stored procedures
+                SqlCommand cmd = new SqlCommand(requete, cnx);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Titre", SqlDbType.NVarChar).Value = titre;
+
+                try
+                {
+                    cnx.Open();
+                    SqlDataReader dataReader = cmd.ExecuteReader();
+                    var article = new Article();
+                    if (dataReader.Read())
+                    {
+                        article.Titre = (string)dataReader["Titre"];
+                        article.Contenu = (string)dataReader["Contenu"];
+                        article.Revision = (int)dataReader["Revision"];
+                        article.IdContributeur = (int)dataReader["IdContributeur"];
+                        article.DateModification = (DateTime)dataReader["DateModification"];
+                    }
+                    else
+                        return null;
+
+                    dataReader.Close();
+                    return article;
+                }
+                catch (Exception e)
+                {
+                    string msg = e.Message;
+                    return null;
+                }
+                finally
+                {
+                    cnx.Close();
+                }
+            }
         }
 
 

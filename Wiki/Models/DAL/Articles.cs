@@ -157,9 +157,35 @@ namespace Wiki.Models.DAL
 
 
         // Auteurs:
-        public int Update(Article a)
+        public bool Update(Article a)
         {
-            return 0;
+            bool TEST = true;
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                var cmd = new SqlCommand("UpdateArticle", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Titre", SqlDbType.NVarChar).Value = a.Titre;
+                cmd.Parameters.Add("@Contenu", SqlDbType.NVarChar).Value = a.Contenu;
+                cmd.Parameters.Add("@IdContributeur", SqlDbType.Int).Value = 1;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return TEST;
+                }
+                catch (Exception e)
+                {
+                    string Msg = e.Message;
+                    TEST = false;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return TEST;
+            }
         }
 
 

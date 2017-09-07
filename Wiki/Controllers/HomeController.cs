@@ -42,7 +42,7 @@ namespace Wiki.Controllers
             return PartialView(article);
         }
 
-        //AjouterArticle
+        //Ajouter une Article
         [HttpGet]
         public ActionResult AjouterArticle(string titre)
         {
@@ -80,6 +80,39 @@ namespace Wiki.Controllers
         public ActionResult Details(string titre)
         {
             ViewBag.Article = repo.Find(titre);
+            return View("Index");
+        }
+
+        //Modifier l'article
+        [HttpGet]
+        public ActionResult Modifier(string titre) { return View(repo.Find(titre)); }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Modifier(Article article, string operation)
+        {
+            if (operation == "Modifier")
+            {
+                if (ModelState.IsValid)
+                {
+                    article.IdContributeur = 1;
+                    if (repo.Update(article))
+                    {
+                        ViewBag.Erreur = "L'article a ete modifie";
+                        ViewBag.Article = article;
+                    }
+                    else
+                    {
+                        ViewBag.Erreur = "L'article n'a pas ete modifie";
+                        return View("Error");
+                    }
+                }
+            }
+            else
+            {
+                return View("Supprimer", article);
+            }
+
             return View("Index");
         }
 	}

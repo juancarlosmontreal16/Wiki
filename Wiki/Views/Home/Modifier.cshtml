@@ -1,0 +1,47 @@
+﻿@model Wiki.Models.Biz.Article
+
+@{
+    ViewBag.Title = "Modifier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Modifier</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Article</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.Label("Titre : " + Model.Titre, new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Contenu, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Contenu, new { @class = "ckeditor" })
+                @Html.ValidationMessageFor(model => model.Contenu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.DateModification)
+            @Html.HiddenFor(model => model.Revision)
+            @Html.HiddenFor(model => model.IdContributeur)
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="operation" value="Modifier" class="btn btn-default" />
+                <input type="submit" name="operation" value="Supprimer" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Annuler", "Index")
+    </div>
+}

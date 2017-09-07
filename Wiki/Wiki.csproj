@@ -192,6 +192,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Partial_Article.cshtml" />
     <Content Include="Views\Home\AjouterArticle.cshtml" />
+    <Content Include="Views\Home\Partial_ListeMatieres.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

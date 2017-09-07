@@ -71,5 +71,16 @@ namespace Wiki.Controllers
 
             return View("Index");
         }
+
+        //Donne la liste des matieres
+        public ActionResult Partial_ListeMatieres() { return PartialView(repo); }
+
+        //Trouve les details d'un article selectionne dans la table des matieres
+        [HttpGet]
+        public ActionResult Details(string titre)
+        {
+            ViewBag.Article = repo.Find(titre);
+            return View("Index");
+        }
 	}
 }

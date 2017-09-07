@@ -14,7 +14,12 @@
         <div class="row content">
             <br /><br />
             <div class="col-sm-3 sidenav">
-                @RenderSection("gauche", required: false)
+                <div class="hero-unit">
+                    <h4>Table des matieres</h4>
+                    <ul class="nav nav-list">
+                        @Html.Action("Partial_ListeMatieres", "Home")
+                    </ul>
+                </div>
             </div>
             <div class="col-sm-9">
                 @RenderBody()

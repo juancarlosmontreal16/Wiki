@@ -1,0 +1,8 @@
+﻿@model Wiki.Models.DAL.Articles
+
+@foreach (var item in Model.GetTitres())
+{
+    <li>
+        @Html.ActionLink(item, "Details", "Home", new { @class = "btn btn-primary btn-large", titre = item }, null)
+    </li>
+}

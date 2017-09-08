@@ -13,7 +13,7 @@ namespace Wiki.Controllers
         Articles repo = new Articles();
 
         [ValidateInput(false)]
-        public ActionResult Index(Article a)
+        public ActionResult Index(Article a) //Daily
         {
             if (Request.HttpMethod == "POST")
             {
@@ -37,14 +37,14 @@ namespace Wiki.Controllers
         }
         
         //Donne l'article en question
-        public ActionResult Partial_Article(Article article)
+        public ActionResult Partial_Article(Article article) //Daily
         { 
             return PartialView(article);
         }
 
         //Ajouter une Article
         [HttpGet]
-        public ActionResult AjouterArticle(string titre)
+        public ActionResult AjouterArticle(string titre) //Daily
         {
             Article a = new Article();
             a.Titre = titre;
@@ -53,7 +53,7 @@ namespace Wiki.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult AjouterArticle(Article article)
+        public ActionResult AjouterArticle(Article article) //Daily
         {
             if (ModelState.IsValid)
             {
@@ -73,11 +73,11 @@ namespace Wiki.Controllers
         }
 
         //Donne la liste des matieres
-        public ActionResult Partial_ListeMatieres() { return PartialView(repo); }
+        public ActionResult Partial_ListeMatieres() { return PartialView(repo); } //Juan Carlos
 
         //Trouve les details d'un article selectionne dans la table des matieres
         [HttpGet]
-        public ActionResult Details(string titre)
+        public ActionResult Details(string titre) //Daily
         {
             ViewBag.Article = repo.Find(titre);
             return View("Index");
@@ -85,11 +85,11 @@ namespace Wiki.Controllers
 
         //Modifier l'article
         [HttpGet]
-        public ActionResult Modifier(string titre) { return View(repo.Find(titre)); }
+        public ActionResult Modifier(string titre) { return View(repo.Find(titre)); } //Daily
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Modifier(Article article, string operation)
+        public ActionResult Modifier(Article article, string operation) //Daily
         {
             if (operation == "Modifier")
             {
@@ -118,7 +118,7 @@ namespace Wiki.Controllers
 
         //Supprimer
         [HttpPost]
-        public ActionResult Supprimer(string titre)
+        public ActionResult Supprimer(string titre) //Juan Carlos
         {
             if (repo.Delete(titre))
             {

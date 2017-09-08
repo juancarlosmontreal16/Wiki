@@ -13,7 +13,7 @@ namespace Wiki.Models.DAL
 {
     public class Articles
     {
-        // Auteurs:
+        // Auteurs: Daily
         public bool Add(Article a)
         {
             bool TEST = true;
@@ -45,7 +45,7 @@ namespace Wiki.Models.DAL
             }
         }
 
-        // Auteurs:
+        // Auteurs: Daily
         public Article Find(string titre)
         {
             string cStr = ConfigurationManager.ConnectionStrings["Wiki"].ConnectionString;
@@ -156,7 +156,7 @@ namespace Wiki.Models.DAL
         }
 
 
-        // Auteurs:
+        // Auteurs: Daily
         public bool Update(Article a)
         {
             bool TEST = true;
@@ -190,7 +190,7 @@ namespace Wiki.Models.DAL
 
 
 
-        // Auteurs:
+        // Auteurs: Juan Carlos
         public bool Delete(string titre)
         {
             bool TEST = true;

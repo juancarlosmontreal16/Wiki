@@ -6,14 +6,23 @@
 @{
     if (ViewBag.Article != null)
     {
-        <font color="red"><p>@ViewBag.Erreur</p></font>
+        if (@ViewBag.Erreur != null)
+        { 
+            <div class="alert alert-info" role="alert">
+                <b>@ViewBag.Erreur</b>
+            </div>
+        }
         @Html.Action("Partial_Article", "Home", new { article = ViewBag.Article })
     }
     else
     {
         if (ViewBag.Erreur == "L'article n'existe pas")
         {
-            <h1><font color="red"><p>@ViewBag.Erreur</p></font></h1>
+            <div class="form-horizontal">
+                <div class="alert alert-info" role="alert">
+                    <h1>@ViewBag.Erreur</h1>
+                </div>
+            </div>
             <div class="form-group">
                 <span class="control-label col-md-5">Voulez vouz l'ajouter ?</span>
                 @Html.ActionLink("OUI", "AjouterArticle", "Home", new { titre = ViewBag.Titre }, null) |
@@ -32,7 +41,12 @@
                     <div class="form-group">
                         <span class="control-label col-md-2">Consulter l'article</span>
                         @Html.TextBox("Titre")
-                        <font color="red"><p>@ViewBag.Erreur</p></font>
+                        @if (ViewBag.Erreur != null)
+                        { 
+                            <div class="alert alert-danger" role="alertdialog">
+                                <b>@ViewBag.Erreur</b>
+                            </div>
+                        }
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">

@@ -59,12 +59,12 @@ namespace Wiki.Controllers
             {
                 if (repo.Add(article))
                 {
-                    ViewBag.Erreur = "L'article a ete ajoute";
+                    ViewBag.Erreur = "L'article a été ajouté";
                     ViewBag.Article = repo.Find(article.Titre);
                 }
                 else
                 {
-                    ViewBag.Erreur = "L'article n'a pas ete ajoute";
+                    ViewBag.Erreur = "L'article n'a pas été ajouté";
                     return View("Error");
                 }
             }
@@ -98,12 +98,12 @@ namespace Wiki.Controllers
                     article.IdContributeur = 1;
                     if (repo.Update(article))
                     {
-                        ViewBag.Erreur = "L'article a ete modifie";
+                        ViewBag.Erreur = "L'article a été modifié";
                         ViewBag.Article = article;
                     }
                     else
                     {
-                        ViewBag.Erreur = "L'article n'a pas ete modifie";
+                        ViewBag.Erreur = "L'article n'a pas été modifié";
                         return View("Error");
                     }
                 }
@@ -114,6 +114,19 @@ namespace Wiki.Controllers
             }
 
             return View("Index");
+        }
+
+        //Supprimer
+        [HttpPost]
+        public ActionResult Supprimer(string titre)
+        {
+            if (repo.Delete(titre))
+            {
+                //return View("Index");
+                return RedirectToAction("Index");
+            }
+            ViewBag.Erreur = "L'article n'a pas ete supprime";
+            return View("Error");
         }
 	}
 }

@@ -191,9 +191,33 @@ namespace Wiki.Models.DAL
 
 
         // Auteurs:
-        public int Delete(string titre)
+        public bool Delete(string titre)
         {
-            return 0;
+            bool TEST = true;
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                var cmd = new SqlCommand("DeleteArticle", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Titre", SqlDbType.NVarChar).Value = titre;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return TEST;
+                }
+                catch (Exception e)
+                {
+                    string Msg = e.Message;
+                    TEST = false;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return TEST;
+            }
         }
 
 

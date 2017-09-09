@@ -9,7 +9,7 @@
 
 <h2>AjouterArticle</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Ajouter", "Home"))
 {
     @Html.AntiForgeryToken()
 
@@ -42,3 +42,4 @@
 <div>
     @Html.ActionLink("Annuler", "Index")
 </div>
+

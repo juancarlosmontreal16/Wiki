@@ -191,10 +191,10 @@
     <Content Include="Views\DAL\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Partial_Article.cshtml" />
-    <Content Include="Views\Home\AjouterArticle.cshtml" />
     <Content Include="Views\Home\Partial_ListeMatieres.cshtml" />
     <Content Include="Views\Home\Modifier.cshtml" />
     <Content Include="Views\Home\Supprimer.cshtml" />
+    <Content Include="Views\Home\Ajouter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ckeditor\" />

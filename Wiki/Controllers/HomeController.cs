@@ -12,48 +12,43 @@ namespace Wiki.Controllers
     {
         Articles repo = new Articles();
 
+
+        /*********************************************** INDEX ************************************************/
         [ValidateInput(false)]
-        public ActionResult Index(Article a) //Daily
+        [HttpGet]
+        public ActionResult Index() //Daily
         {
-            if (Request.HttpMethod == "POST")
-            {
-                if (a.Titre == null)
-                {
-                    ViewBag.Erreur = "Erreur : Vous devez saisir un titre !!!";
-                    return View();
-                }
-
-                string titre = a.Titre;
-                a = repo.Find(a.Titre);
-                if (a == null)
-                {
-                    ViewBag.Erreur = "L'article n'existe pas";
-                    ViewBag.Titre = titre;
-                }
-                ViewBag.Article = a;
-            }
-
+            ViewBag.Article = null;
             return View();
         }
-        
-        //Donne l'article en question
-        public ActionResult Partial_Article(Article article) //Daily
-        { 
-            return PartialView(article);
+
+        [ValidateInput(false)]
+        [Route("home/Index/{titre}")]
+        public ActionResult Index(string titre) //Daily
+        {
+            if (titre != "")
+            {
+                Article a = repo.Find(titre);
+                if (a == null)
+                    ViewBag.Erreur = "L'article n'existe pas";
+                else
+                    ViewBag.Article = a;
+            }
+            return View();
         }
 
+        /***************************************** AjouterArticle *********************************************/
         //Ajouter une Article
-        [HttpGet]
-        public ActionResult AjouterArticle(string titre) //Daily
+        public ActionResult Ajouter(string titre) //Daily
         {
             Article a = new Article();
             a.Titre = titre;
             return View(a);
         }
-
+        
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult AjouterArticle(Article article) //Daily
+        public ActionResult Ajouter(Article article) //Daily
         {
             if (ModelState.IsValid)
             {
@@ -72,18 +67,23 @@ namespace Wiki.Controllers
             return View("Index");
         }
 
-        //Donne la liste des matieres
-        public ActionResult Partial_ListeMatieres() { return PartialView(repo); } //Juan Carlos
-
+        /*********************************************** Details **********************************************/
         //Trouve les details d'un article selectionne dans la table des matieres
-        [HttpGet]
         public ActionResult Details(string titre) //Daily
         {
-            ViewBag.Article = repo.Find(titre);
+            Article a = repo.Find(titre);
+            if (a == null)
+            {
+                ViewBag.Erreur = "L'article n'existe pas";
+                ViewBag.NouvelleTitre = titre;
+            }
+                
+            else
+                ViewBag.Article = a;
             return View("Index");
         }
 
-        //Modifier l'article
+        /********************************************** Modifier ************************************************/
         [HttpGet]
         public ActionResult Modifier(string titre) { return View(repo.Find(titre)); } //Daily
 
@@ -116,17 +116,38 @@ namespace Wiki.Controllers
             return View("Index");
         }
 
-        //Supprimer
-        [HttpPost]
+        /********************************************* Supprimer *********************************************/
         public ActionResult Supprimer(string titre) //Juan Carlos
         {
-            if (repo.Delete(titre))
+            if (Request.HttpMethod == "GET")
             {
-                //return View("Index");
-                return RedirectToAction("Index");
+                Article a = repo.Find(titre);
+                if (a == null)
+                {
+                    ViewBag.Erreur = "L'article n'a pas ete supprime";
+                    return View("Error");
+                }
+                return View(a);
             }
-            ViewBag.Erreur = "L'article n'a pas ete supprime";
-            return View("Error");
+            else
+            {
+                if (repo.Delete(titre))
+                {
+                    return RedirectToAction("Index", new { titre = "" });
+                }
+                ViewBag.Erreur = "L'article n'a pas ete supprime";
+                return View("Error");
+            }
         }
+
+        /**************************************** Methodes pour s'appuyer ************************************/
+        //Donne l'article en question
+        public ActionResult Partial_Article(Article article) //Daily
+        {
+            return PartialView(article);
+        }
+
+        //Donne la liste des matieres
+        public ActionResult Partial_ListeMatieres() { return PartialView(repo); } //Juan Carlos
 	}
 }
